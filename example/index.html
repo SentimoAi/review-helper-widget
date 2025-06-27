@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentimo Review Helper - Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+            background: #f9f9f9;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 500px;
+            height: 120px;
+            padding: 1rem;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            resize: vertical;
+        }
+
+        .wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sentimo Review Helper Demo</h1>
+<div class="wrapper">
+    <textarea id="review" placeholder="Write your review..."></textarea>
+</div>
+
+<script src="../dist/review-helper-1.0.0.min.js"></script>
+<script>
+    Sentimo.reviewHelper({
+        reviewFieldSelector: '#review',
+        clientId: 'client_bedc951c947cf9cf0a5ccbab743b253f',
+        proxyUrl: 'https://sentimo.local/review-helper/api/proxy',
+        messageOverrides: {
+            clear: "✅ Your message is clear.",
+            vague: "🤔 Could you clarify this a bit?",
+            ironic: "😅 This seems sarcastic. Please rephrase.",
+            disrespectful: "🚫 Let's keep things respectful."
+        },
+        messages: {
+            tooShort: "Please write at least 10 characters.",
+            loading: "🔎 Analyzing your review...",
+            success: "✅ Your review looks good!",
+            error: "⚠️ Something went wrong. Try again."
+        },
+        popupStyle: {
+            backgroundColor: '#fefefe',
+            borderColor: '#00bfa6',
+            color: '#333',
+            fontWeight: 'normal'
+        }
+    });
+</script>
+</body>
+</html>

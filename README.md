@@ -13,7 +13,6 @@ The Sentimo Review Helper is a lightweight JavaScript widget that helps users wr
 Sentimo.reviewHelper({
   reviewFieldSelector: '#yourTextareaId',
   clientId: 'your-sentimo-client-id',
-  proxyUrl: 'https://yourdomain.com/review-helper/api/proxy', // optional
   messageOverrides: {
     clear: "Thanks! Your message is clear.",
     vague: "Could you clarify your message?",
@@ -36,6 +35,16 @@ Sentimo.reviewHelper({
 
 ```
 
+## 🔐 Requirements
+To use this widget, you must:
+
+* Have an active Sentimo subscription.
+* Generate an API key from your dashboard
+* Whitelist your domain in the Sentimo dashboard.
+* Use this key to get your clientId.
+
+If you don’t have access yet, you can [request a demo here](https://sentimoai.com).
+
 ## ✨ Features
 
 * ✅ Fully standalone (no dependency)
@@ -46,7 +55,7 @@ Sentimo.reviewHelper({
 
 * 🖌️ Styleable popup feedback box
 
-* 🔧 Works anywhere you can place a <textarea>
+* 🔧 Works anywhere you can place a `<textarea>`
 
 ## 💬 Output
 By default, the widget:
